@@ -30,7 +30,7 @@
             </Grid.RowDefinitions>
 
             <!--  Title View  -->
-            <controls:TitleView Title="Categories" Grid.Row="0">
+            <controls:TitleView Title="Home" Grid.Row="0">
                 <controls:TitleView.TrailingView>
                     <StackLayout HorizontalOptions="End" Orientation="Horizontal">
                         <buttons:SfButton
@@ -76,12 +76,14 @@
                                                         Desktop=120}"                              
                                 WidthRequest="{OnIdiom Phone=160,
                                                        Tablet=224,
-                                                       Desktop=200}">
-                                <Image.Source>
+                                                       Desktop=200}"
+                                Source="{Binding Icon}">
+                                <!--<Image.Source>
                                     <UriImageSource Uri="{Binding Icon}" 
 			                                 CacheValidity="14" 
 			                                 CachingEnabled="true"/>
-                                </Image.Source>
+                                </Image.Source>-->
+                                
                             </Image>
 
                             <!--  Category Name  -->
