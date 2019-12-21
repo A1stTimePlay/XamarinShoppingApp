@@ -1,7 +1,7 @@
 ﻿using Xamarin.Forms.Internals;
 using Xamarin.Forms.Xaml;
 
-namespace XamarinShoppingApp.Views.Login
+namespace XamarinShoppingApp.Views.Forms
 {
     /// <summary>
     /// View used to show the email entry with validation status.

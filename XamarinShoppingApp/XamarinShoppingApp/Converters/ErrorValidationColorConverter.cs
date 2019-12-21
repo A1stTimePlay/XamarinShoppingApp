@@ -4,7 +4,7 @@ using System.Text.RegularExpressions;
 using Xamarin.Forms;
 using Xamarin.Forms.Internals;
 using XamarinShoppingApp.Controls;
-using XamarinShoppingApp.ViewModels.Login;
+using XamarinShoppingApp.ViewModels.Forms;
 
 namespace XamarinShoppingApp.Converters
 {

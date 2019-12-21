@@ -1,19 +1,19 @@
 ﻿using Xamarin.Forms.Internals;
 using Xamarin.Forms.Xaml;
 
-namespace XamarinShoppingApp.Views.Login
+namespace XamarinShoppingApp.Views.Forms
 {
     /// <summary>
-    /// Class helps to reduce repetitive markup, and allows an apps appearance to be more easily changed.
+    /// Page to login with user name and password
     /// </summary>
     [Preserve(AllMembers = true)]
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class Styles
+    public partial class SimpleLoginPage
     {
         /// <summary>
-        /// Initializes a new instance of the <see cref="Styles" /> class.
+        /// Initializes a new instance of the <see cref="SimpleLoginPage" /> class.
         /// </summary>
-        public Styles()
+        public SimpleLoginPage()
         {
             InitializeComponent();
         }

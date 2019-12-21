@@ -2,7 +2,7 @@
 using Xamarin.Forms;
 using Xamarin.Forms.Internals;
 
-namespace XamarinShoppingApp.ViewModels.Login
+namespace XamarinShoppingApp.ViewModels.Forms
 {
     /// <summary>
     /// ViewModel for login page.

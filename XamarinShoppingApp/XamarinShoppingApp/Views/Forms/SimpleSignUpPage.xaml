@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <ContentPage
-    x:Class="XamarinShoppingApp.Views.Login.SimpleSignUpPage"
+    x:Class="XamarinShoppingApp.Views.Forms.SimpleSignUpPage"
     xmlns="http://xamarin.com/schemas/2014/forms"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:border="clr-namespace:Syncfusion.XForms.Border;assembly=Syncfusion.Core.XForms"
@@ -8,8 +8,8 @@
     xmlns:control="clr-namespace:XamarinShoppingApp.Controls"
     xmlns:converter="clr-namespace:XamarinShoppingApp.Converters"
     xmlns:core="clr-namespace:Syncfusion.XForms.Core;assembly=Syncfusion.Core.XForms"
-    xmlns:local="clr-namespace:XamarinShoppingApp.Views.Login"
-    xmlns:viewModel="clr-namespace:XamarinShoppingApp.ViewModels.Login"
+    xmlns:local="clr-namespace:XamarinShoppingApp.Views.Forms"
+    xmlns:viewModel="clr-namespace:XamarinShoppingApp.ViewModels.Forms"
     Title="Sign Up"
     BackgroundColor="{DynamicResource Gray-200}"
     NavigationPage.HasNavigationBar="False">
