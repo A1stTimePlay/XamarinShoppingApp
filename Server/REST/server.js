@@ -17,8 +17,9 @@ app.use(function(req, res) {
     res.status(404).send({url: req.originalUrl + ' not found'})
 })
 
-server.listen(3000,()=>{
+server.listen(3000,(error)=>{
+	if (error) return console.log(`Error: ${error}`);
 
-console.log('Node app is running on port 3000');
+	console.log('Node app is running on port 3000');
 
 });
