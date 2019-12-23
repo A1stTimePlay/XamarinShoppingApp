@@ -1,5 +1,5 @@
 {
-  "bannerimage": "Banner.png",
+  "bannerimage": "Banner.jpg",
 
   "products": [
     {
@@ -173,8 +173,8 @@
 
   "newarrivalproducts": [
     {
-      "previewimage": "Sunglass.png",
-      "name": "Sunglass",
+      "previewimage": "Shirt.png",
+      "name": "Shirt",
       "description": "This plaid, cotton skirt will keep you warm in the air-conditioned office or outside on cooler days.",
       "actualprice": "220",
       "discountpercent": "15",
@@ -182,8 +182,8 @@
       "totalquantity": 0
     },
     {
-      "previewimage": "Shoe.png",
-      "name": "Shoes",
+      "previewimage": "Pant.jpg",
+      "name": "Pant",
       "description": "Look your best this fall in this V-neck, pleated peasant blouse with full sleeves. Comes in white, chocolate, forest green, and more.",
       "actualprice": "285",
       "discountpercent": "30",
@@ -191,8 +191,8 @@
       "totalquantity": 0
     },
     {
-      "previewimage": "Watch.png",
-      "name": "Watch",
+      "previewimage": "Suit.jpg",
+      "name": "Suit",
       "description": "Available in khaki, taupe, and dove gray, this high-waisted, cotton skirt hits just below the knees.",
       "actualprice": "220",
       "discountpercent": "15",
@@ -200,8 +200,8 @@
       "totalquantity": 0
     },
     {
-      "previewimage": "Travelbag.png",
-      "name": "Travel Bag",
+      "previewimage": "Watch.jpg",
+      "name": "Watch",
       "description": "This cute miniature pack has adjustable straps, allowing it to be carried on your back, or as a purse. The genuine leather comes in cream, black, mahogany, and wine.",
       "actualprice": "285",
       "discountpercent": "30",
@@ -209,8 +209,8 @@
       "totalquantity": 0
     },
     {
-      "previewimage": "Wallet.png",
-      "name": "Wallet",
+      "previewimage": "Shoes.jpeg",
+      "name": "Shoes",
       "description": "Be bold in red with this fashionable, yet comfortable dress. Three-quarter-length sleeves are perfect for the in-between weather of autumn.",
       "actualprice": "220",
       "discountpercent": "15",
@@ -218,44 +218,8 @@
       "totalquantity": 0
     },
     {
-      "previewimage": "Bed.png",
-      "name": "Bed",
-      "description": "Be bold in red with this fashionable, yet comfortable dress. Three-quarter-length sleeves are perfect for the in-between weather of autumn.",
-      "actualprice": "220",
-      "discountpercent": "15",
-      "quantities": [ "1", "2", "3" ],
-      "totalquantity": 0
-    },
-    {
-      "previewimage": "Desktop.png",
-      "name": "Desktop",
-      "description": "Be bold in red with this fashionable, yet comfortable dress. Three-quarter-length sleeves are perfect for the in-between weather of autumn.",
-      "actualprice": "220",
-      "discountpercent": "15",
-      "quantities": [ "1", "2", "3" ],
-      "totalquantity": 0
-    },
-    {
-      "previewimage": "Laptop.png",
-      "name": "Laptop",
-      "description": "Be bold in red with this fashionable, yet comfortable dress. Three-quarter-length sleeves are perfect for the in-between weather of autumn.",
-      "actualprice": "220",
-      "discountpercent": "15",
-      "quantities": [ "1", "2", "3" ],
-      "totalquantity": 0
-    },
-    {
-      "previewimage": "Mattress.png",
-      "name": "Mattress",
-      "description": "Be bold in red with this fashionable, yet comfortable dress. Three-quarter-length sleeves are perfect for the in-between weather of autumn.",
-      "actualprice": "220",
-      "discountpercent": "15",
-      "quantities": [ "1", "2", "3" ],
-      "totalquantity": 0
-    },
-    {
-      "previewimage": "NoteBook.png",
-      "name": "NoteBook",
+      "previewimage": "Accessories.jpg",
+      "name": "Accessories",
       "description": "Be bold in red with this fashionable, yet comfortable dress. Three-quarter-length sleeves are perfect for the in-between weather of autumn.",
       "actualprice": "220",
       "discountpercent": "15",

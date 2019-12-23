@@ -17,6 +17,8 @@
     <PackageReference Include="Syncfusion.Xamarin.Buttons" Version="17.3.0.34" />
     <PackageReference Include="Syncfusion.Xamarin.Cards" Version="17.3.0.34" />
     <PackageReference Include="Syncfusion.Xamarin.Core" Version="17.3.0.34" />
+    <PackageReference Include="Syncfusion.Xamarin.Expander" Version="17.3.0.34" />
+    <PackageReference Include="Syncfusion.Xamarin.SfBadgeView" Version="17.3.0.34" />
     <PackageReference Include="Syncfusion.Xamarin.SfComboBox" Version="17.3.0.34" />
     <PackageReference Include="Syncfusion.Xamarin.SfListView" Version="17.3.0.34" />
     <PackageReference Include="Syncfusion.Xamarin.SfRating" Version="17.3.0.34" />
@@ -29,6 +31,9 @@
       <Generator>MSBuild:Compile</Generator>
     </EmbeddedResource>
     <EmbeddedResource Update="Views\Catalog\CategoryTilePage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Views\Catalog\ProductHomePage.xaml">
       <Generator>MSBuild:Compile</Generator>
     </EmbeddedResource>
     <EmbeddedResource Update="Views\Catalog\Styles.xaml">
@@ -44,6 +49,12 @@
       <Generator>MSBuild:Compile</Generator>
     </EmbeddedResource>
     <EmbeddedResource Update="Views\Forms\Styles.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Views\Templates\ProductListTemplate.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Views\Templates\Styles.xaml">
       <Generator>MSBuild:Compile</Generator>
     </EmbeddedResource>
   </ItemGroup>

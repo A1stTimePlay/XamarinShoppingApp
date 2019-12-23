@@ -13,7 +13,7 @@ namespace XamarinShoppingApp
         {
             InitializeComponent();
 
-            MainPage = new CategoryTilePage();
+            MainPage = new NavigationPage(new ProductHomePage());
         }
 
         protected override void OnStart()
