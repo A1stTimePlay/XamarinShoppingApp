@@ -1,9 +1,19 @@
-﻿using System.Threading.Tasks;
+﻿using Nancy.Json;
+using Newtonsoft.Json;
+using System;
+using System.Collections.Generic;
+using System.Net.Http;
+using System.Threading.Tasks;
 using Xamarin.Forms;
 using Xamarin.Forms.Internals;
+using XamarinShoppingApp.Models;
+using xaaasadsdadasd.Services;
+using XamarinShoppingApp.Core.Services;
+using XamarinShoppingApp.Views.Login;
 
 namespace XamarinShoppingApp.ViewModels.Forms
 {
+    
     /// <summary>
     /// ViewModel for login page.
     /// </summary>
@@ -13,6 +23,11 @@ namespace XamarinShoppingApp.ViewModels.Forms
         #region Fields
 
         private string password;
+        //public INavigationService navigationService = new NavigationService();
+        SimpleLoginPage simpleLoginPage;
+
+        //IDialogService dialogService;
+
 
         #endregion
 
@@ -23,8 +38,9 @@ namespace XamarinShoppingApp.ViewModels.Forms
         /// </summary>
         public LoginPageViewModel()
         {
-            this.LoginCommand = new Command(this.LoginClicked);
-            this.SignUpCommand = new Command(this.SignUpClicked);
+            //this.simpleLoginPage = simpleLoginPage;
+            this.LoginCommand = new Command(this.LoginClickedAsync);
+            this.SignUpCommand = new Command(this.SignUpClickedAsync);
             this.ForgotPasswordCommand = new Command(this.ForgotPasswordClicked);
             this.SocialMediaLoginCommand = new Command(this.SocialLoggedIn);
         }
@@ -79,6 +95,7 @@ namespace XamarinShoppingApp.ViewModels.Forms
         /// </summary>
         public Command SocialMediaLoginCommand { get; set; }
 
+        public string Message { get; set; }
         #endregion
 
         #region methods
@@ -87,18 +104,68 @@ namespace XamarinShoppingApp.ViewModels.Forms
         /// Invoked when the Log In button is clicked.
         /// </summary>
         /// <param name="obj">The Object</param>
-        private void LoginClicked(object obj)
+        private async void LoginClickedAsync(object obj)
         {
-            // Do something
+           
+            try
+            {
+
+                if (string.IsNullOrEmpty(Email) && string.IsNullOrEmpty(Password))
+                   await Application.Current.MainPage.DisplayAlert("Username and Password are null!", "Please input Username and Password", "Ok");
+                else if(!string.IsNullOrEmpty(Email) && string.IsNullOrEmpty(Password))
+                    await Application.Current.MainPage.DisplayAlert("Password is null!", "Please input Password", "Ok");
+                else if(string.IsNullOrEmpty(Email) && !string.IsNullOrEmpty(Password))
+                    await Application.Current.MainPage.DisplayAlert("Username is null!", "Please input Username", "Ok");
+                string txt_username = Email.ToString().Trim();
+                string txt_password = Password.ToString().Trim();
+                var httpClient = new HttpClient();
+                //JavaScriptSerializer json_serializer = new JavaScriptSerializer();
+                var respone = await httpClient.GetStringAsync("http://10.45.241.165:3000/user/" + txt_username);
+                Console.WriteLine(respone);
+                List<User> user = JsonConvert.DeserializeObject<List<User>>(respone);
+                Console.WriteLine("Count of user is :"+user.Count);
+                if (user.Count>0)
+                {
+                    if (user[0].PASS_WORD.Equals(txt_password))
+                            await Application.Current.MainPage.Navigation.PushAsync(new SimpleSignUpPage());   
+                    
+                    else
+                        await Application.Current.MainPage.DisplayAlert("Username or Password is wrong!", "Please input again", "Ok");
+                }
+                else 
+                    await Application.Current.MainPage.DisplayAlert("Username or Password is wrong!", "Please input again", "Ok");
+
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e.Message);
+            }
+            
         }
+
 
         /// <summary>
         /// Invoked when the Sign Up button is clicked.
         /// </summary>
         /// <param name="obj">The Object</param>
-        private void SignUpClicked(object obj)
+        private async void SignUpClickedAsync(object obj)
         {
+            await Application.Current.MainPage.Navigation.PushAsync(new SimpleSignUpPage());
             // Do something
+            //navigationService.NavigateTo(typeof(SignUpPageViewModel), string.Empty, string.Empty, false);
+            var client = new HttpClient();
+            var content = new StringContent(
+                 JsonConvert.SerializeObject(new { USERNAME = "myusername", PASS_WORD = "mypass", EMAIL = "123@gmail.com" }));
+            Console.WriteLine("toi day!");
+            Console.WriteLine(content);
+            var result = await client.PostAsync("http://10.10.99.121:3000/Users", content).ConfigureAwait(false);
+
+            Console.WriteLine("chạy tới đây rồi nhé!");
+            Console.WriteLine(result);
+            if (result.IsSuccessStatusCode)
+            {
+                var tokenJson = await result.Content.ReadAsStringAsync();
+            }
         }
 
         /// <summary>
