@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" ?>
+﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage
     x:Class="XamarinShoppingApp.Views.Forms.SimpleLoginPage"
     xmlns="http://xamarin.com/schemas/2014/forms"
@@ -24,8 +24,9 @@
 
     <!--  Binding context for login page  -->
     <ContentPage.BindingContext>
-        <viewModel:LoginPageViewModel />
+        <viewModel:LoginPageViewModel/>
     </ContentPage.BindingContext>
+
 
     <ContentPage.Content>
         <ScrollView HorizontalOptions="Center">
@@ -60,6 +61,14 @@
                         <RowDefinition Height="Auto" />
                     </Grid.RowDefinitions>
 
+
+                    <Label
+                        FontFamily="{StaticResource Montserrat-SemiBold}"
+                        FontSize="20"
+                        HorizontalTextAlignment="Center"
+                        Style="{StaticResource LabelStyle}"
+                        Text="{Binding Message}"
+                        TextColor="{DynamicResource Gray-900}" />
                     <!--  Label to display the title of this page  -->
                     <Label
                         FontFamily="{StaticResource Montserrat-SemiBold}"
@@ -166,12 +175,12 @@
                     Spacing="1"
                     VerticalOptions="End">
 
-                    <StackLayout.Padding>
+                   <!-- <StackLayout.Padding>
                         <OnIdiom
                             x:DataType="Thickness"
                             Default="0, 48, 0, 0"
                             Phone="0" />
-                    </StackLayout.Padding>
+                    </StackLayout.Padding> -->
 
                     <Label
                         FontFamily="{StaticResource Montserrat-Medium}"
@@ -196,3 +205,4 @@
     </ContentPage.Content>
 
 </ContentPage>
+

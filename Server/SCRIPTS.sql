@@ -5,7 +5,7 @@ CREATE TABLE IF NOT EXISTS USERS(
     USERNAME VARCHAR(30) not null unique,
     PASS_WORD VARCHAR(20) not null,
     EMAIL VARCHAR(50) not null unique,
-	Primary Key (ID)
+    Primary Key (ID)
 );
 CREATE TABLE IF NOT EXISTS USERS_DETAIL(
     ID INT not null AUTO_INCREMENT,
@@ -13,7 +13,7 @@ CREATE TABLE IF NOT EXISTS USERS_DETAIL(
     REAL_NAME VARCHAR(50) not null,
     PHONE_NUMBER VARCHAR(10) not null,
     ADDRESS VARCHAR(200) not null,
-	Primary Key (ID)
+    Primary Key (ID)
 );
 
 CREATE TABLE IF NOT EXISTS PRODUCT(

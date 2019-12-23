@@ -1,21 +1,23 @@
-﻿using Xamarin.Forms.Internals;
-using Xamarin.Forms.Xaml;
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 
-namespace XamarinShoppingApp.Views.Forms
+using Xamarin.Forms;
+using Xamarin.Forms.Xaml;
+using XamarinShoppingApp.ViewModels.Login;
+
+namespace XamarinShoppingApp.Views.Login
 {
-    /// <summary>
-    /// Page to login with user name and password
-    /// </summary>
-    [Preserve(AllMembers = true)]
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class SimpleLoginPage
+    public partial class SimpleLoginPage : ContentPage
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="SimpleLoginPage" /> class.
-        /// </summary>
+        //LoginPageViewModel login;
         public SimpleLoginPage()
         {
             InitializeComponent();
+            //login = new LoginPageViewModel(this);
         }
     }
 }
