@@ -154,7 +154,6 @@
                         CornerRadius="4"
                         Style="{StaticResource SfFlatButtonStyle}"
                         Text="Log In" />
-
                 </StackLayout>
             </StackLayout>
         </ScrollView>

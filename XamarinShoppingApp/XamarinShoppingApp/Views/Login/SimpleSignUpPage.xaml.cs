@@ -17,5 +17,7 @@ namespace XamarinShoppingApp.Views.Login
         {
             InitializeComponent();
         }
+
+        
     }
 }

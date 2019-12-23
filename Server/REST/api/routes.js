@@ -10,5 +10,4 @@ module.exports = function(app) {
     .get(accountCtrl.detail)
     .put(accountCtrl.update)
     .delete(accountCtrl.delete);
-
 };

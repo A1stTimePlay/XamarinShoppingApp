@@ -16,6 +16,7 @@ namespace XamarinShoppingApp.Views.Login
         public SimpleEmailEntry()
         {
             InitializeComponent();
+            
         }
     }
 }
