@@ -1,6 +1,7 @@
 'use strict';
 module.exports = function(app) {
   let accountCtrl = require('./controllers/AccountController');
+  let productCtrl = require('./controllers/ProductController');
 
   app.route('/Users')
     .get(accountCtrl.get)
@@ -10,5 +11,11 @@ module.exports = function(app) {
     .get(accountCtrl.detail)
     .put(accountCtrl.update)
     .delete(accountCtrl.delete);
+  
+  app.route('/Products/:Category')
+    .get(productCtrl.getByCategory)
 
+  app.route('/Products')
+    .get(productCtrl.getAllProducts)
+    .post(accountCtrl.store);
 };
