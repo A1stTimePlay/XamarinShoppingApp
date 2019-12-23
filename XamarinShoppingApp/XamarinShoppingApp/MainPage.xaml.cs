@@ -15,7 +15,9 @@ namespace XamarinShoppingApp
     {
         public MainPage()
         {
+
             InitializeComponent();
+            
         }
     }
 }
