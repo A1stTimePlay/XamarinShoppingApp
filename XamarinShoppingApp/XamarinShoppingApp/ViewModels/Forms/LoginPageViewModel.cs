@@ -11,7 +11,7 @@ using xaaasadsdadasd.Services;
 using XamarinShoppingApp.Core.Services;
 using XamarinShoppingApp.Views.Login;
 
-namespace XamarinShoppingApp.ViewModels.Login
+namespace XamarinShoppingApp.ViewModels.Forms
 {
     
     /// <summary>

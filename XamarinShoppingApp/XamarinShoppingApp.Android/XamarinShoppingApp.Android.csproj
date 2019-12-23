@@ -59,10 +59,19 @@
     <PackageReference Include="Syncfusion.Xamarin.Buttons">
       <Version>17.3.0.34</Version>
     </PackageReference>
+    <PackageReference Include="Syncfusion.Xamarin.Cards">
+      <Version>17.3.0.34</Version>
+    </PackageReference>
     <PackageReference Include="Syncfusion.Xamarin.Core">
       <Version>17.3.0.34</Version>
     </PackageReference>
     <PackageReference Include="Syncfusion.Xamarin.SfComboBox">
+      <Version>17.3.0.34</Version>
+    </PackageReference>
+    <PackageReference Include="Syncfusion.Xamarin.SfListView">
+      <Version>17.3.0.34</Version>
+    </PackageReference>
+    <PackageReference Include="Syncfusion.Xamarin.SfRating">
       <Version>17.3.0.34</Version>
     </PackageReference>
     <PackageReference Include="Xamarin.Forms" Version="4.2.0.709249" />

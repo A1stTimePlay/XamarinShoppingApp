@@ -1,17 +1,18 @@
-﻿using System;
+using System;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
-using XamarinShoppingApp.Views.Login;
+using XamarinShoppingApp.Views.Forms;
 
 namespace XamarinShoppingApp
 {
     public partial class App : Application
     {
+        public static string BaseImageUrl { get; } = "https://cdn.syncfusion.com/essential-ui-kit-for-xamarin.forms/common/uikitimages/";
         public App()
         {
             InitializeComponent();
 
-            MainPage = new NavigationPage(new SimpleLoginPage());
+            MainPage = new SimpleLoginPage();
         }
 
         protected override void OnStart()

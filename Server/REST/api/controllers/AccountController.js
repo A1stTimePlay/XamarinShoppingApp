@@ -32,7 +32,7 @@ module.exports = {
         let data = req.body;
         let sql = 'INSERT INTO Users SET ?'
         db.query(sql, [data], (err, response) => {
-            if (err) throw err
+            if (err.code=='ER_DUP_ENTRY') return res.status(500).send(err.code);
             res.json({message: 'Insert success!'})
         })
     },

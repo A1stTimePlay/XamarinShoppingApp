@@ -1,0 +1,99 @@
+using System.Collections.Generic;
+using System.Collections.ObjectModel;
+using System.ComponentModel;
+using System.Runtime.CompilerServices;
+using System.Runtime.Serialization;
+using System.Threading.Tasks;
+using Syncfusion.ListView.XForms;
+using Syncfusion.ListView.XForms.Control.Helpers;
+using XamarinShoppingApp.Models;
+using Xamarin.Forms;
+using Xamarin.Forms.Internals;
+
+namespace XamarinShoppingApp.ViewModels.Catalog
+{
+    /// <summary>
+    /// ViewModel for Category page.
+    /// </summary>
+    [Preserve(AllMembers = true)]
+    [DataContract]
+    public class CategoryPageViewModel : BaseViewModel
+    {
+        #region Fields
+
+        private ObservableCollection<Category> categories;
+
+        public Command categorySelectedCommand;
+
+        public Command expandingCommand;
+
+        public Command notificationCommand;
+
+        #endregion
+
+        #region Public properties
+
+        /// <summary>
+        /// Gets or sets the property that has been bound with StackLayout, which displays the categories using ComboBox.
+        /// </summary>
+        [DataMember(Name = "categories")]
+        public ObservableCollection<Category> Categories
+        {
+            get { return this.categories; }
+            set
+            {
+                if (this.categories == value)
+                {
+                    return;
+                }
+
+                this.categories = value;
+                this.NotifyPropertyChanged();
+            }
+        }
+
+        #endregion
+
+        #region Command
+
+        /// <summary>
+        /// Gets or sets the command that will be executed when the Category is selected.
+        /// </summary>
+        public Command CategorySelectedCommand
+        {
+            get { return categorySelectedCommand ?? (categorySelectedCommand = new Command(CategorySelected)); }
+        }
+
+        /// <summary>
+        /// Gets or sets the command that will be executed when the Notification button is clicked.
+        /// </summary>
+        public Command NotificationCommand
+        {
+            get { return notificationCommand ?? (notificationCommand = new Command(this.NotificationClicked)); }
+        }
+
+        #endregion
+
+        #region Methods
+
+        /// <summary>
+        /// Invoked when the Category is selected.
+        /// </summary>
+        /// <param name="obj">The Object</param>
+        private void CategorySelected(object obj)
+        {
+            //Do Something
+        }
+
+        /// <summary>
+        /// Invoked when the notification button is clicked.
+        /// </summary>
+        /// <param name="obj">The Object</param>
+        private void NotificationClicked(object obj)
+        {
+            // Do something
+        }
+
+        #endregion
+    }
+}
