@@ -5,6 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Xamarin.Forms;
+using XamarinShoppingApp.Models;
 
 namespace XamarinShoppingApp
 {
@@ -13,7 +14,7 @@ namespace XamarinShoppingApp
     [DesignTimeVisible(false)]
     public partial class MainPage : ContentPage
     {
-        public MainPage()
+        public MainPage(Product product)
         {
 
             InitializeComponent();

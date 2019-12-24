@@ -4,8 +4,8 @@ using Xamarin.Forms;
 using XamarinShoppingApp.Core.Services;
 using XamarinShoppingApp.Services;
 using XamarinShoppingApp.ViewModels;
-using XamarinShoppingApp.ViewModels.Login;
-using XamarinShoppingApp.Views.Login;
+using XamarinShoppingApp.ViewModels.Forms;
+using XamarinShoppingApp.Views.Forms;
 using XamarinShoppingApp;
 
 namespace xaaasadsdadasd.Services

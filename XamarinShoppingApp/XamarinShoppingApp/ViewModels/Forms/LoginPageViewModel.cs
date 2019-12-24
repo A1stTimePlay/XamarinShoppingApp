@@ -1,5 +1,4 @@
-﻿using Nancy.Json;
-using Newtonsoft.Json;
+﻿using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.Net.Http;
@@ -9,7 +8,7 @@ using Xamarin.Forms.Internals;
 using XamarinShoppingApp.Models;
 using xaaasadsdadasd.Services;
 using XamarinShoppingApp.Core.Services;
-using XamarinShoppingApp.Views.Login;
+using XamarinShoppingApp.Views.Forms;
 
 namespace XamarinShoppingApp.ViewModels.Forms
 {
@@ -120,7 +119,7 @@ namespace XamarinShoppingApp.ViewModels.Forms
                 string txt_password = Password.ToString().Trim();
                 var httpClient = new HttpClient();
                 //JavaScriptSerializer json_serializer = new JavaScriptSerializer();
-                var respone = await httpClient.GetStringAsync("http://10.45.241.165:3000/user/" + txt_username);
+                var respone = await httpClient.GetStringAsync("http://192.168.1.236:3000/user/" + txt_username);
                 Console.WriteLine(respone);
                 List<User> user = JsonConvert.DeserializeObject<List<User>>(respone);
                 Console.WriteLine("Count of user is :"+user.Count);
