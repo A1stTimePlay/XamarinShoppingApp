@@ -98,91 +98,34 @@
 
   "categories": [
     {
-      "icon": "Electronics.png",
-      "name": "Electronics",
+      "icon": "Shirt.png",
+      "name": "Shirt",
       "subcategories": [
 
-        "Laptops",
-        "Mobiles",
-        "Tablets",
-        "Televisions",
-        "Printers and Monitors"
 
       ]
     },
     {
-      "icon": "Fashion.png",
-      "name": "Fashion",
+      "icon": "Pant.png",
+      "name": "Pant",
       "subcategories": [
 
-        "Shirts",
-        "Skirts",
-        "Casual Wear",
-        "Jeans",
-        "Kurtis"
 
       ]
     },
     {
-      "icon": "HomeFurniture.png",
-      "name": "Home and Furniture",
+      "icon": "Suit.png",
+      "name": "Suit",
       "subcategories": [
 
-        "Diwans",
-        "Sofas",
-        "Curtains"
 
       ]
     },
     {
-      "icon": "PersonalCare.png",
-      "name": "Personal Care",
+      "icon": "Watch.png",
+      "name": "Watch",
       "subcategories": [
 
-        "Laptops",
-        "Mobiles",
-        "Tablets",
-        "Televisions",
-        "Printers and Monitors"
-
-      ]
-    },
-    {
-      "icon": "Books.png",
-      "name": "Books",
-      "subcategories": [
-
-        "Laptops",
-        "Mobiles",
-        "Tablets",
-        "Televisions",
-        "Printers and Monitors"
-
-      ]
-    },
-    {
-      "icon": "Clothes.png",
-      "name": "Clothes",
-      "subcategories": [
-
-        "Laptops",
-        "Mobiles",
-        "Tablets",
-        "Televisions",
-        "Printers and Monitors"
-
-      ]
-    },
-    {
-      "icon": "MobilePhones.png",
-      "name": "Mobile Phones",
-      "subcategories": [
-
-        "Laptops",
-        "Mobiles",
-        "Tablets",
-        "Televisions",
-        "Printers and Monitors"
 
       ]
     },
@@ -191,24 +134,14 @@
       "name": "Accessories",
       "subcategories": [
 
-        "Laptops",
-        "Mobiles",
-        "Tablets",
-        "Televisions",
-        "Printers and Monitors"
 
       ]
     },
     {
-      "icon": "Toys.png",
-      "name": "Toys and Baby",
+      "icon": "Shoes.png",
+      "name": "Shoes",
       "subcategories": [
 
-        "Laptops",
-        "Mobiles",
-        "Tablets",
-        "Televisions",
-        "Printers and Monitors"
 
       ]
     }

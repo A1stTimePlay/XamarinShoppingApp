@@ -1,6 +1,7 @@
 using System;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
+using XamarinShoppingApp.Views.Catalog;
 using XamarinShoppingApp.Views.Forms;
 
 namespace XamarinShoppingApp
@@ -12,7 +13,7 @@ namespace XamarinShoppingApp
         {
             InitializeComponent();
 
-            MainPage = new SimpleLoginPage();
+            MainPage = new CategoryTilePage();
         }
 
         protected override void OnStart()

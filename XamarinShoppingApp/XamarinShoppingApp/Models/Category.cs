@@ -20,7 +20,7 @@ namespace XamarinShoppingApp.Models
         [DataMember(Name = "icon")]
         public string Icon
         {
-            get { return App.BaseImageUrl + this.icon; }
+            get { return this.icon; }
             set { this.icon = value; }
         }
 
