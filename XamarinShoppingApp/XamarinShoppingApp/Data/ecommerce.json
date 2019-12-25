@@ -12,24 +12,6 @@
       "discountpercent": "15",
       "overallrating": "5",
       "previewimages": [ "Image1.png", "Image1.png", "Image1.png", "Image1.png", "Image1.png" ],
-      "reviews": [
-        {
-          "profileimage": "ProfileImage10.png",
-          "customername": "Serina Williams",
-          "comment": "Greatest purchase I have ever made in my life.",
-          "rating": "5",
-          "images": [ "Image1.png", "Image1.png", "Image1.png" ],
-          "revieweddate": "2019-12-29"
-        },
-        {
-          "profileimage": "ProfileImage11.png",
-          "customername": "Alise Valasquez",
-          "comment": "Absolutely love them! Can't stop wearing!",
-          "rating": "5",
-          "images": [ "Image1.png", "Image1.png", "Image1.png" ],
-          "revieweddate": "2019-12-29"
-        }
-      ],
       "quantities": [ "1", "2", "3" ],
       "totalquantity": 0,
       "sizevariants": [ "XS", "S", "M", "L", "XL" ]
@@ -44,7 +26,6 @@
       "discountpercent": "30",
       "overallrating": "4",
       "previewimages": [ "Image2.png", "Image2.png", "Image2.png", "Image2.png", "Image2.png" ],
-      "reviews": [],
       "quantities": [ "1", "2", "3" ],
       "totalquantity": 0,
       "sizevariants": [ "XS", "S", "M", "L", "XL" ]
@@ -59,7 +40,6 @@
       "discountpercent": "15",
       "overallrating": "5",
       "previewimages": [ "Image3.png", "Image3.png", "Image3.png", "Image3.png", "Image3.png" ],
-      "reviews": [],
       "quantities": [ "1", "2", "3" ],
       "totalquantity": 0,
       "sizevariants": [ "XS", "S", "M", "L", "XL" ]
@@ -74,7 +54,6 @@
       "discountpercent": "30",
       "overallrating": "4",
       "previewimages": [ "Image4.png", "Image4.png", "Image4.png", "Image4.png", "Image4.png" ],
-      "reviews": [],
       "quantities": [ "1", "2", "3" ],
       "totalquantity": 0,
       "sizevariants": [ "XS", "S", "M", "L", "XL" ]
@@ -89,7 +68,6 @@
       "discountpercent": "15",
       "overallrating": "5",
       "previewimages": [ "Image5.png", "Image5.png", "Image5.png", "Image5.png", "Image5.png" ],
-      "reviews": [],
       "quantities": [ "1", "2", "3" ],
       "totalquantity": 0,
       "sizevariants": [ "XS", "S", "M", "L", "XL" ]

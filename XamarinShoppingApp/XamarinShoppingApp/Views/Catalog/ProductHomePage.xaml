@@ -47,17 +47,6 @@
                         TextColor="{DynamicResource Gray-800}"
                         VerticalOptions="Center" />
 
-                    <buttons:SfButton
-                        Margin="0"
-                        Padding="0"
-                        BackgroundColor="{DynamicResource Gray-White}"
-                        CornerRadius="4"
-                        FontFamily="{StaticResource Montserrat-SemiBold}"
-                        FontSize="12"
-                        HorizontalOptions="End"
-                        Text="VIEW ALL"
-                        TextColor="{DynamicResource HyperLink}" />
-
                 </StackLayout>
 
                 <listView:SfListView

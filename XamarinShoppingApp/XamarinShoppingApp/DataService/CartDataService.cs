@@ -1,6 +1,6 @@
 ﻿using System.Reflection;
 using System.Runtime.Serialization.Json;
-using XamarinShoppingApp.ViewModels.Catalog;
+using XamarinShoppingApp.ViewModels.Bookmarks;
 using Xamarin.Forms.Internals;
 
 namespace XamarinShoppingApp.DataService
@@ -9,22 +9,22 @@ namespace XamarinShoppingApp.DataService
     /// Data service to load the data from json file.
     /// </summary>
     [Preserve(AllMembers = true)]
-    public class CatalogDataService
+    public class CartDataService
     {
         #region fields
 
-        private static CatalogDataService instance;
+        private static CartDataService instance;
 
-        private CatalogPageViewModel catalogPageViewModel;
+        private CartPageViewModel cartPageViewModel;
 
         #endregion
 
         #region Constructor
 
         /// <summary>
-        /// Creates an instance for the <see cref="CatalogDataService"/> class.
+        /// Creates an instance for the <see cref="CartDataService"/> class.
         /// </summary>
-        private CatalogDataService()
+        private CartDataService()
         {
         }
 
@@ -33,16 +33,15 @@ namespace XamarinShoppingApp.DataService
         #region Properties
 
         /// <summary>
-        /// Gets an instance of the <see cref="CatalogDataService"/>.
+        /// Gets an instance of the <see cref="CartDataService"/>.
         /// </summary>
-        public static CatalogDataService Instance => instance ?? (instance = new CatalogDataService());
+        public static CartDataService Instance => instance ?? (instance = new CartDataService());
 
         /// <summary>
-        /// Gets or sets the value of catalog page view model.
+        /// Gets or sets the value of cart page view model.
         /// </summary>
-        public CatalogPageViewModel CatalogPageViewModel =>
-            this.catalogPageViewModel ??
-            (this.catalogPageViewModel = PopulateData<CatalogPageViewModel>("ecommerce.json"));
+        public CartPageViewModel CartPageViewModel =>
+            (this.cartPageViewModel = PopulateData<CartPageViewModel>("ecommerce.json"));
 
         #endregion
 

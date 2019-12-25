@@ -7,6 +7,7 @@ using Xamarin.Forms;
 using Xamarin.Forms.Internals;
 using System;
 using XamarinShoppingApp.Views.Catalog;
+using XamarinShoppingApp.Views.Cart;
 
 namespace XamarinShoppingApp.ViewModels.Catalog
 {
@@ -19,11 +20,11 @@ namespace XamarinShoppingApp.ViewModels.Catalog
     {
         #region Fields
 
-        private ObservableCollection<Product> newArrivalProduts;
+        private ObservableCollection<CartItem> newArrivalProduts;
 
-        private ObservableCollection<Product> offerProduts;
+        private ObservableCollection<CartItem> offerProduts;
 
-        private ObservableCollection<Product> recommendedProduts;
+        private ObservableCollection<CartItem> recommendedProduts;
 
         private Command itemSelectedCommand;
 
@@ -47,7 +48,7 @@ namespace XamarinShoppingApp.ViewModels.Catalog
         /// Gets or sets the property that has been bound with list view, which displays the collection of products from json.
         /// </summary>
         [DataMember(Name = "newarrivalproducts")]
-        public ObservableCollection<Product> NewArrivalProducts
+        public ObservableCollection<CartItem> NewArrivalProducts
         {
             get
             {
@@ -70,7 +71,7 @@ namespace XamarinShoppingApp.ViewModels.Catalog
         /// Gets or sets the property that has been bound with list view, which displays the collection of products from json.
         /// </summary>
         [DataMember(Name = "offerproducts")]
-        public ObservableCollection<Product> OfferProducts
+        public ObservableCollection<CartItem> OfferProducts
         {
             get
             {
@@ -93,7 +94,7 @@ namespace XamarinShoppingApp.ViewModels.Catalog
         /// Gets or sets the property that has been bound with list view, which displays the collection of products from json.
         /// </summary>
         [DataMember(Name = "recommendedproducts")]
-        public ObservableCollection<Product> RecommendedProducts
+        public ObservableCollection<CartItem> RecommendedProducts
         {
             get
             {
@@ -138,8 +139,8 @@ namespace XamarinShoppingApp.ViewModels.Catalog
         private async void ItemSelected(object attachedObject)
         {
             // Do something
-            Product selected = (Product)(attachedObject as Syncfusion.ListView.XForms.ItemTappedEventArgs).ItemData;
-            await Application.Current.MainPage.Navigation.PushAsync(new MainPage(selected));
+            CartItem selected = (CartItem)(attachedObject as Syncfusion.ListView.XForms.ItemTappedEventArgs).ItemData;
+            await Application.Current.MainPage.Navigation.PushAsync(new test());
         }
 
         #endregion

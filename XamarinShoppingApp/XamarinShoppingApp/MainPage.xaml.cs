@@ -14,11 +14,11 @@ namespace XamarinShoppingApp
     [DesignTimeVisible(false)]
     public partial class MainPage : ContentPage
     {
-        public MainPage(Product product)
+        public MainPage()
         {
 
             InitializeComponent();
-            
+            Console.WriteLine(App.CurrentUser.Email);
         }
     }
 }

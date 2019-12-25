@@ -3,17 +3,16 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
-
-namespace XamarinShoppingApp.Views.Forms
+namespace XamarinShoppingApp.Views.Cart
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class SimpleLoginPage : ContentPage
+    public partial class Cart : ContentPage
     {
-        //LoginPageViewModel login;
-        public SimpleLoginPage()
+        public Cart()
         {
             InitializeComponent();
         }

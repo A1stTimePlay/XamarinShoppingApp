@@ -3,19 +3,20 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
+using XamarinShoppingApp.ViewModels.Cart;
 
-
-namespace XamarinShoppingApp.Views.Forms
+namespace XamarinShoppingApp.Views.Cart
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class SimpleLoginPage : ContentPage
+    public partial class test : ContentPage
     {
-        //LoginPageViewModel login;
-        public SimpleLoginPage()
+        public test()
         {
             InitializeComponent();
+            BindingContext = new testVM();
         }
     }
 }
