@@ -89,7 +89,7 @@
                         TextColor="{DynamicResource Gray-800}" />
 
                     <!--  Entry to get email ID from user  -->
-                    <local:SimpleEmailEntry Grid.Row="2" Padding="0,24" />
+                    <local:SimpleEmailEntry Grid.Row="2" Padding="0,24"/>
 
                     <!--  Entry to get password from user  -->
                     <border:SfBorder

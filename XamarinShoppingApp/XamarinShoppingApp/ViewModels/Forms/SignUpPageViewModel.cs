@@ -1,5 +1,12 @@
-﻿using Xamarin.Forms;
+﻿using Newtonsoft.Json;
+using System;
+using System.Net.Http;
+using System.Text;
+using Xamarin.Forms;
 using Xamarin.Forms.Internals;
+using XamarinShoppingApp.Models;
+using XamarinShoppingApp.Views.Forms;
+
 
 namespace XamarinShoppingApp.ViewModels.Forms
 {
@@ -37,6 +44,8 @@ namespace XamarinShoppingApp.ViewModels.Forms
         /// <summary>
         /// Gets or sets the property that bounds with an entry that gets the name from user in the Sign Up page.
         /// </summary>
+        /// 
+
         public string Name
         {
             get
@@ -125,6 +134,7 @@ namespace XamarinShoppingApp.ViewModels.Forms
         private void LoginClicked(object obj)
         {
             // Do something
+           
         }
 
         /// <summary>

@@ -2,6 +2,7 @@ using System;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 using XamarinShoppingApp.Views.Forms;
+using XamarinShoppingApp.Views.Catalog;
 
 namespace XamarinShoppingApp
 {
@@ -10,9 +11,10 @@ namespace XamarinShoppingApp
         public static string BaseImageUrl { get; } = "https://cdn.syncfusion.com/essential-ui-kit-for-xamarin.forms/common/uikitimages/";
         public App()
         {
-            InitializeComponent();
-
-            MainPage = new SimpleLoginPage();
+             InitializeComponent();
+            MainPage = new NavigationPage(new SimpleLoginPage());
+            
+            
         }
 
         protected override void OnStart()

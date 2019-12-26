@@ -1,15 +1,15 @@
-﻿using Nancy.Json;
-using Newtonsoft.Json;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Net.Http;
 using System.Threading.Tasks;
 using Xamarin.Forms;
 using Xamarin.Forms.Internals;
 using XamarinShoppingApp.Models;
-using xaaasadsdadasd.Services;
 using XamarinShoppingApp.Core.Services;
-using XamarinShoppingApp.Views.Login;
+using XamarinShoppingApp.Views.Forms;
+using Newtonsoft.Json;
+using System.Collections.ObjectModel;
+using XamarinShoppingApp.Views.Catalog;
 
 namespace XamarinShoppingApp.ViewModels.Forms
 {
@@ -24,7 +24,7 @@ namespace XamarinShoppingApp.ViewModels.Forms
 
         private string password;
         //public INavigationService navigationService = new NavigationService();
-        SimpleLoginPage simpleLoginPage;
+        //SimpleLoginPage simpleLoginPage;
 
         //IDialogService dialogService;
 
@@ -38,7 +38,7 @@ namespace XamarinShoppingApp.ViewModels.Forms
         /// </summary>
         public LoginPageViewModel()
         {
-            //this.simpleLoginPage = simpleLoginPage;
+            
             this.LoginCommand = new Command(this.LoginClickedAsync);
             this.SignUpCommand = new Command(this.SignUpClickedAsync);
             this.ForgotPasswordCommand = new Command(this.ForgotPasswordClicked);
@@ -106,10 +106,8 @@ namespace XamarinShoppingApp.ViewModels.Forms
         /// <param name="obj">The Object</param>
         private async void LoginClickedAsync(object obj)
         {
-           
             try
             {
-
                 if (string.IsNullOrEmpty(Email) && string.IsNullOrEmpty(Password))
                    await Application.Current.MainPage.DisplayAlert("Username and Password are null!", "Please input Username and Password", "Ok");
                 else if(!string.IsNullOrEmpty(Email) && string.IsNullOrEmpty(Password))
@@ -120,14 +118,14 @@ namespace XamarinShoppingApp.ViewModels.Forms
                 string txt_password = Password.ToString().Trim();
                 var httpClient = new HttpClient();
                 //JavaScriptSerializer json_serializer = new JavaScriptSerializer();
-                var respone = await httpClient.GetStringAsync("http://10.45.241.165:3000/user/" + txt_username);
+                var respone = await httpClient.GetStringAsync("http://192.168.137.237:3000/user/" + txt_username);
                 Console.WriteLine(respone);
                 List<User> user = JsonConvert.DeserializeObject<List<User>>(respone);
                 Console.WriteLine("Count of user is :"+user.Count);
                 if (user.Count>0)
                 {
                     if (user[0].PASS_WORD.Equals(txt_password))
-                            await Application.Current.MainPage.Navigation.PushAsync(new SimpleSignUpPage());   
+                            await Application.Current.MainPage.Navigation.PushAsync(new CategoryTilePage());   
                     
                     else
                         await Application.Current.MainPage.DisplayAlert("Username or Password is wrong!", "Please input again", "Ok");
@@ -151,21 +149,7 @@ namespace XamarinShoppingApp.ViewModels.Forms
         private async void SignUpClickedAsync(object obj)
         {
             await Application.Current.MainPage.Navigation.PushAsync(new SimpleSignUpPage());
-            // Do something
-            //navigationService.NavigateTo(typeof(SignUpPageViewModel), string.Empty, string.Empty, false);
-            var client = new HttpClient();
-            var content = new StringContent(
-                 JsonConvert.SerializeObject(new { USERNAME = "myusername", PASS_WORD = "mypass", EMAIL = "123@gmail.com" }));
-            Console.WriteLine("toi day!");
-            Console.WriteLine(content);
-            var result = await client.PostAsync("http://10.10.99.121:3000/Users", content).ConfigureAwait(false);
 
-            Console.WriteLine("chạy tới đây rồi nhé!");
-            Console.WriteLine(result);
-            if (result.IsSuccessStatusCode)
-            {
-                var tokenJson = await result.Content.ReadAsStringAsync();
-            }
         }
 
         /// <summary>

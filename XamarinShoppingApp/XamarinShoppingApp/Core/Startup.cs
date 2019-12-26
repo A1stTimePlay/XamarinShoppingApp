@@ -1,6 +1,6 @@
 ﻿using System;
 using XamarinShoppingApp.Core.Services;
-using XamarinShoppingApp.ViewModels.Login;
+using XamarinShoppingApp.ViewModels.Forms;
 namespace XamarinShoppingApp.Core
 {
     public class Startup
