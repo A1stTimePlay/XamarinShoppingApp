@@ -3,6 +3,7 @@ module.exports = function(app) {
   let accountCtrl = require('./controllers/AccountController');
   let productCtrl = require('./controllers/ProductController');
   let orderCtrl = require('./controllers/OrderController');
+  let orderDetailCtrl = require('./controllers/OrderDetailController');
 
   app.route('/Users')
     .get(accountCtrl.getAllUsers)
@@ -26,4 +27,7 @@ module.exports = function(app) {
   app.route('/Order')
     .get(orderCtrl.getOrderByIdUserAndOrderDate)
     .post(orderCtrl.store)
+	
+  app.route('/OrderDetail')
+    .post(orderDetailCtrl.store)
 };

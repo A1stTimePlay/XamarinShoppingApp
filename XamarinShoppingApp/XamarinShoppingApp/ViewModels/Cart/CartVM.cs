@@ -1,6 +1,8 @@
-﻿using System;
+﻿using Newtonsoft.Json;
+using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.Net.Http;
 using System.Text;
 using Xamarin.Forms;
 using XamarinShoppingApp.Models;
@@ -10,6 +12,7 @@ namespace XamarinShoppingApp.ViewModels.Cart
     class CartVM:BaseViewModel
     {
         private ObservableCollection<Order_Detail> produts;
+        private List<Order_Detail_Server> list_Order_Detail_Server;
         private double totalPrice;
 
         private double discountPrice;
@@ -22,14 +25,28 @@ namespace XamarinShoppingApp.ViewModels.Cart
             get { return this.placeOrderCommand ?? (this.placeOrderCommand = new Command(this.PlaceOrderClicked)); }
         }
 
-        private void PlaceOrderClicked(object obj)
+        private async void PlaceOrderClicked(object obj)
         {
-            
+            bool flag = true;
+            var client = new HttpClient();
+            foreach (Order_Detail read in App.CurrentCart){
+                Order_Detail_Server temp = new Order_Detail_Server(read);
+                var jsonObj = JsonConvert.SerializeObject(temp);
+                var content = new StringContent(jsonObj, Encoding.UTF8, "application/json");
+                var result = await client.PostAsync(App.BaseApiUrl + "OrderDetail", content).ConfigureAwait(false);
+                if (result.IsSuccessStatusCode) continue;
+                else
+                {
+                    flag = false;
+                    break;
+                }
+            }
         }
 
         public CartVM()
         {
             produts = new ObservableCollection<Order_Detail>(App.CurrentCart);
+            list_Order_Detail_Server = new List<Order_Detail_Server>();
             UpdatePrice();
         }
 

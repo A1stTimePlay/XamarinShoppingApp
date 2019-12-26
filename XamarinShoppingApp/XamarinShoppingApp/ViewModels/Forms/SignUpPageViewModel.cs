@@ -6,6 +6,7 @@ using System.Text;
 using Xamarin.Forms;
 using Xamarin.Forms.Internals;
 using XamarinShoppingApp.Models;
+using XamarinShoppingApp.Views.Forms;
 
 namespace XamarinShoppingApp.ViewModels.Forms
 {
@@ -74,8 +75,12 @@ namespace XamarinShoppingApp.ViewModels.Forms
                     Console.WriteLine(result.StatusCode);
                     if (result.IsSuccessStatusCode)
                     {
+                        await Application.Current.MainPage.Navigation.PushAsync(new SimpleLoginPage());
 
-
+                    }
+                    else
+                    {
+                        await App.Current.MainPage.DisplayAlert("Thông báo", "Username hoặc Email đã có trên hệ thống", "ok");
                     }
                 }
             }
