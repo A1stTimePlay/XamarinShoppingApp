@@ -12,5 +12,12 @@ module.exports = {
             if (err) return res.status(500).send(err.code);
             res.json({message: 'Insert success!'})
         })
+    },
+    getOrderDetailByOrderId: (req, res) => {
+        let sql = 'SELECT * FROM Orders_Detail WHERE id_order=?'
+        db.query(sql, [req.query.id_order], (err, response) => {     // db.query dc truyen vao lenh sql, "?" dc thay bang tham so trong ngoac vuong
+            if (err) throw err
+            res.json(response)
+        })
     }
 }

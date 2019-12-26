@@ -144,7 +144,7 @@
                 </Grid.ColumnDefinitions>
 
                 <!--  Product images  -->
-                <rotator:SfRotator
+                <!-- <rotator:SfRotator
                     x:Name="Rotator"
                     BackgroundColor="{OnIdiom Default={DynamicResource Gray-White},
                                               Tablet={DynamicResource Gray-100},
@@ -158,7 +158,8 @@
                     NavigationStripMode="Dots"
                     SelectedDotColor="{DynamicResource PrimaryColor}"
                     UnselectedDotColor="{DynamicResource Gray-200}"
-                    VerticalOptions="Start" />
+                    VerticalOptions="Start" /> -->
+                <Image Source="{Binding ProductDetail.Image}"/>
 
                 <ContentView
                     Grid.Row="{OnIdiom Default=1,
@@ -267,14 +268,14 @@
                                 FontSize="{OnIdiom Default=20,
                                                    Desktop=24}"
                                 Style="{StaticResource LabelStyle}"
-                                Text="{Binding ProductDetail.DiscountPrice, StringFormat='${0:0 }'}"
+                                Text="{Binding ProductDetail.DiscountPrice, StringFormat='Đ{0:0 }'}"
                                 TextColor="{DynamicResource PrimaryColor}" />
 
                             <Label
                                 FontFamily="{DynamicResource Montserrat-Medium}"
                                 FontSize="12"
                                 Style="{StaticResource LabelStyle}"
-                                Text="{Binding ProductDetail.Price, StringFormat='${0:0.00} '}"
+                                Text="{Binding ProductDetail.Price, StringFormat='Đ{0:0} '}"
                                 TextDecorations="Strikethrough"
                                 VerticalTextAlignment="Center" />
 

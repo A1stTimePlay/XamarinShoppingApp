@@ -26,8 +26,10 @@ module.exports = function(app) {
 
   app.route('/Order')
     .get(orderCtrl.getOrderByIdUserAndOrderDate)
+	.get(orderCtrl.getOrderByIdUser)
     .post(orderCtrl.store)
 	
   app.route('/OrderDetail')
+	.get(orderDetailCtrl.getOrderDetailByOrderId)
     .post(orderDetailCtrl.store)
 };
