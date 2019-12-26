@@ -26,6 +26,12 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Compile Update="Views\Catalog\CategoryPage.xaml.cs">
+      <DependentUpon>CategoryPage.xaml</DependentUpon>
+    </Compile>
+  </ItemGroup>
+
+  <ItemGroup>
     <EmbeddedResource Update="Themes\LightTheme.xaml">
       <Generator>MSBuild:Compile</Generator>
     </EmbeddedResource>
@@ -37,6 +43,9 @@
     </EmbeddedResource>
     <EmbeddedResource Update="Views\Catalog\Styles.xaml">
       <Generator>MSBuild:Compile</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Views\DetailProduct.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
     <EmbeddedResource Update="Views\Forms\SimpleEmailEntry.xaml">
       <Generator>MSBuild:Compile</Generator>
@@ -50,5 +59,9 @@
     <EmbeddedResource Update="Views\Forms\Styles.xaml">
       <Generator>MSBuild:Compile</Generator>
     </EmbeddedResource>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Services\" />
   </ItemGroup>
 </Project>

@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="XamarinShoppingApp.Views.DetailProduct">
+    <ContentPage.Content>
+        <ScrollView>
+            <StackLayout>
+                <Image x:Name="IMAGE1" Margin="3" Aspect="AspectFill" HeightRequest="350" VerticalOptions="Fill"/>
+                <Label x:Name="LabelName" HorizontalOptions="StartAndExpand" TextColor="{DynamicResource PrimaryColor}"  />
+                <Label x:Name="Detail"/>
+                <Label x:Name="PRICE1"
+                   FontFamily="{StaticResource Montserrat-SemiBold}"
+                   FontSize="{OnIdiom Default=20,Desktop=24}"
+                   TextColor="{DynamicResource PrimaryColor}" />
+                <Label x:Name="Rating"/>
+                <Button Text="Add to Cart" BackgroundColor="red" BorderColor="gray"/>
+            </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>

@@ -56,11 +56,8 @@
                 x:Name="ValidationLabel"
                 Margin="15,-5,0,0"
                 FontSize="12"
-                IsVisible="{Binding Path=IsFocused, Source={x:Reference EmailEntry}, Converter={StaticResource StringToBooleanConverter}, ConverterParameter={x:Reference EmailEntry}}"
-                Text="Please enter the valid e-mail"
-                TextColor="{DynamicResource Red}"
+                IsVisible="{Binding Path=IsFocused, Source={x:Reference EmailEntry}, Converter={StaticResource StringToBooleanConverter}}}"
                 VerticalOptions="FillAndExpand" />
-
         </StackLayout>
     </ContentView.Content>
 </ContentView>

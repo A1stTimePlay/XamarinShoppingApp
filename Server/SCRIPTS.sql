@@ -48,18 +48,22 @@ ALTER TABLE orders ADD CONSTRAINT fk_order FOREIGN KEY(ID_USER) REFERENCES users
 ALTER TABLE orders_detail ADD CONSTRAINT fk_order_detail_1 FOREIGN KEY(ID_ORDER) REFERENCES orders(ID);
 ALTER TABLE orders_detail ADD CONSTRAINT fk_order_detail_2 FOREIGN KEY(ID_PRODUCT) REFERENCES product(ID);
 
+
 /* Ví da */
 INSERT INTO PRODUCT (CATEGORY,NAME_PRODUCT,PRICE,SALE_PERCENT,RATING,PRODUCT_DETAIL,IMAGE) 
  VALUES ('Ví da','Ví nam dáng ngang cổ điển VNTAN-31N',430000,5,4,
 'Chất liệu da bò, da thật 100%,Màu sắc: Nâu,Kích thước: 9,5cm x 12cm,Kiểu dáng thời trang, đường viền độc đáo,
 Bảo hành 12 tháng','VNTAN-31N_1.jpeg, VNTAN-31N_2.jpeg, VNTAN-31N_2.jpeg'),
+
  ('Ví da','Ví nam da cá sấu một mặt dáng ngang VTA990N-C-CF',990000,10,5,
 'Thiết kế dáng ngang, gồm bộ phận chân cá sấu, Lớp lót da bò nguyên miếng,Màu sắc: Cafe,
  Kích thước: 9,5cm x 12cm, Sản xuất tại Đồ Da Tâm Anh, Bảo hành 12 tháng','VTA990N_1.jpeg, VTA990N_2.jpeg, VTA990N_2.jpeg'),
+ 
  ('Ví da','Ví da nam da đà điểu màu cafe VTA870N-CF',870000,12,4,
 'Chất liệu mặt ngoài: Da đà điểu thật 100%, Chất liệu mặt trong: Da bò thật 100%, Kiểu dáng: Ví ngang,
 Đường chỉ may tỉ mỉ, chắc chắn, Hoạ tiết vân da đẹp, màu sắc độc đáo lạ mắt, da mềm và bền gấp 5 lần các loại da khác cùng độ thoáng khí cao, 
 Cấu tạo: Gồm 2 ngăn chính; 10 ngăn đựng thẻ, cmt, Màu: Cafe, Kích thước: 9cm x 12cm','VTA990N_1.jpeg, VTA990N_2.jpeg, VTA990N_2.jpeg'),
+
 ('Ví da','Ví da nam da đà điểu màu cafe VTA870N-CF',870000,12,4,
 'Chất liệu mặt ngoài: Da đà điểu thật 100%, Chất liệu mặt trong: Da bò thật 100%, Kiểu dáng: Ví ngang,
 Đường chỉ may tỉ mỉ, chắc chắn, Hoạ tiết vân da đẹp, màu sắc độc đáo lạ mắt, da mềm và bền gấp 5 lần các loại da khác cùng độ thoáng khí cao, 
@@ -170,7 +174,6 @@ values ('Thắt lưng','Thắt lưng da bò thời trang D590-1163-15B',59000,10
 •	Thiết kế khóa trượt tiện dụng
 •	Đường chỉ may tinh tế, chắc chắn
 •	Kích thước (độ rộng dây x độ dài dây): 3,2 cm x 120 cm
-
 ','11B_1.jpeg,11B_2.jpeg,11B_3.jpeg');
 
 
