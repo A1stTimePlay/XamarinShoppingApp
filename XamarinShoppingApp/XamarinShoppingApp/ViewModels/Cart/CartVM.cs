@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Text;
+using Xamarin.Forms;
 using XamarinShoppingApp.Models;
 
 namespace XamarinShoppingApp.ViewModels.Cart
@@ -14,7 +15,17 @@ namespace XamarinShoppingApp.ViewModels.Cart
         private double discountPrice;
 
         private double discountPercent;
+        private Command placeOrderCommand;
 
+        public Command PlaceOrderCommand
+        {
+            get { return this.placeOrderCommand ?? (this.placeOrderCommand = new Command(this.PlaceOrderClicked)); }
+        }
+
+        private void PlaceOrderClicked(object obj)
+        {
+            
+        }
 
         public CartVM()
         {

@@ -1,0 +1,63 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="XamarinShoppingApp.Views.Forms.MyListPageProduct"
+             xmlns:local="clr-namespace:XamarinShoppingApp.Views.Forms"
+             xmlns:viewModel="clr-namespace:XamarinShoppingApp.ViewModels.Forms"
+             BackgroundColor="{DynamicResource Gray-200}"
+             Title="My Shopping app">
+    
+   <ContentPage.Content>
+       
+        <ListView ItemsSource="{Binding ProductList}" 
+                  HasUnevenRows="true"
+                  SeparatorVisibility="None"
+                  ItemTapped="OnItemSelected">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <Grid Padding="10" RowSpacing="10" ColumnSpacing="10">
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="auto"/>
+                                <RowDefinition Height="*"/>
+                            </Grid.RowDefinitions>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="auto" />
+                                <ColumnDefinition Width="*" />
+                            </Grid.ColumnDefinitions>
+                            <Image HeightRequest="120"
+                                   HorizontalOptions="CenterAndExpand"
+                                   VerticalOptions="CenterAndExpand"
+                                   Aspect="AspectFill"
+                                   WidthRequest="150"
+                                   Grid.RowSpan="4"
+                                   Source="{Binding Image}" />
+                            <Label Grid.Column="1"
+                                   Grid.Row="1"
+                                   d:Text="Tên:"
+                                   Text="{Binding Name_Product}"
+                                   FontAttributes="Bold"
+                                   VerticalOptions="End"/>
+                            <Label Grid.Column="1"
+                                   Grid.Row="2"
+                                   d:Text="Giá:"
+                                   Text="{Binding Price}"
+                                   FontAttributes="Bold"
+                                   VerticalOptions="End"/>
+                            <Label Grid.Column="1"
+                                   Grid.Row="3"
+                                   VerticalOptions="End"
+                                   FontAttributes="Bold"
+                                   d:Text="Rating:"
+                                   Text="{Binding Rating}"/>
+                        </Grid>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+
+        </ListView>
+    </ContentPage.Content>
+</ContentPage>

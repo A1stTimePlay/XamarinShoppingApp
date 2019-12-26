@@ -174,21 +174,6 @@ namespace XamarinShoppingApp.ViewModels.Forms
         private async void SignUpClickedAsync(object obj)
         {
             await Application.Current.MainPage.Navigation.PushAsync(new SimpleSignUpPage());
-            // Do something
-            //navigationService.NavigateTo(typeof(SignUpPageViewModel), string.Empty, string.Empty, false);
-            var client = new HttpClient();
-            var content = new StringContent(
-                 JsonConvert.SerializeObject(new { USERNAME = "myusername", PASS_WORD = "mypass", EMAIL = "123@gmail.com" }));
-            Console.WriteLine("toi day!");
-            Console.WriteLine(content);
-            var result = await client.PostAsync("http://10.10.99.121:3000/Users", content).ConfigureAwait(false);
-
-            Console.WriteLine("chạy tới đây rồi nhé!");
-            Console.WriteLine(result);
-            if (result.IsSuccessStatusCode)
-            {
-                var tokenJson = await result.Content.ReadAsStringAsync();
-            }
         }
 
         /// <summary>

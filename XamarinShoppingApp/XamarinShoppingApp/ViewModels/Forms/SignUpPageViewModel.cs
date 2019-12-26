@@ -1,5 +1,11 @@
-﻿using Xamarin.Forms;
+﻿using FluentValidation;
+using Newtonsoft.Json;
+using System;
+using System.Net.Http;
+using System.Text;
+using Xamarin.Forms;
 using Xamarin.Forms.Internals;
+using XamarinShoppingApp.Models;
 
 namespace XamarinShoppingApp.ViewModels.Forms
 {
@@ -21,18 +27,63 @@ namespace XamarinShoppingApp.ViewModels.Forms
 
         #region Constructor
 
+        readonly IValidator _validator;
+
         /// <summary>
         /// Initializes a new instance for the <see cref="SignUpPageViewModel" /> class.
         /// </summary>
         public SignUpPageViewModel()
         {
+            _validator = new validateUser();
             this.LoginCommand = new Command(this.LoginClicked);
-            this.SignUpCommand = new Command(this.SignUpClicked);
+            this.SignUpCommand = new Command(this.ValidateUserInfo);
         }
 
         #endregion
 
         #region Property
+
+        async void ValidateUserInfo()
+        {
+            var userObj = new User
+            {
+                Username = Name,
+                Email = Email,
+                PASS_WORD = Password,
+            };
+            var validationResults = _validator.Validate(userObj);
+
+            if (validationResults.IsValid)
+            {
+                //App.Current.MainPage.DisplayAlert("FluentValidation", "Validation Success..!!", "Ok");
+                string username = Name.ToString();
+                string email = Email.ToString();
+                string password = Password.ToString();
+                string confirmPassword = ConfirmPassword.ToString();
+                if (!password.Equals(confirmPassword))
+                {
+                    await App.Current.MainPage.DisplayAlert("Thông báo", "password not matching ", "ok");
+                }
+                else
+                {
+                    var client = new HttpClient();
+                    object userInfos = new { username = username, pass_word = password, email = email };
+                    var jsonObj = JsonConvert.SerializeObject(userInfos);
+                    var content = new StringContent(jsonObj, Encoding.UTF8, "application/json");
+                    var result = await client.PostAsync(App.BaseApiUrl + "Users", content).ConfigureAwait(false);
+                    Console.WriteLine(result.StatusCode);
+                    if (result.IsSuccessStatusCode)
+                    {
+
+
+                    }
+                }
+            }
+            else
+            {
+                await App.Current.MainPage.DisplayAlert("FluentValidation", validationResults.Errors[0].ErrorMessage, "Ok");
+            }
+        }
 
         /// <summary>
         /// Gets or sets the property that bounds with an entry that gets the name from user in the Sign Up page.
@@ -100,6 +151,8 @@ namespace XamarinShoppingApp.ViewModels.Forms
             }
         }
 
+        public string message { get; set; }
+
         #endregion
 
         #region Command
@@ -131,10 +184,6 @@ namespace XamarinShoppingApp.ViewModels.Forms
         /// Invoked when the Sign Up button is clicked.
         /// </summary>
         /// <param name="obj">The Object</param>
-        private void SignUpClicked(object obj)
-        {
-            // Do something
-        }
 
         #endregion
     }

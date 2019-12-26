@@ -7,7 +7,7 @@ using Xamarin.Forms;
 using Xamarin.Forms.Internals;
 using System;
 using XamarinShoppingApp.Views.Catalog;
-using XamarinShoppingApp.Views.Cart;
+using XamarinShoppingApp.Views.Forms;
 
 namespace XamarinShoppingApp.ViewModels.Catalog
 {
@@ -140,7 +140,7 @@ namespace XamarinShoppingApp.ViewModels.Catalog
         {
             // Do something
             CartItem selected = (CartItem)(attachedObject as Syncfusion.ListView.XForms.ItemTappedEventArgs).ItemData;
-            await Application.Current.MainPage.Navigation.PushAsync(new test());
+            await Application.Current.MainPage.Navigation.PushAsync(new MyListPageProduct(selected.Name));
         }
 
         #endregion

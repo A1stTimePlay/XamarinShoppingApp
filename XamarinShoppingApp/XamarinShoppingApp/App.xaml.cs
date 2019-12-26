@@ -5,7 +5,6 @@ using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 using XamarinShoppingApp.Models;
 using XamarinShoppingApp.Views.Bookmarks;
-using XamarinShoppingApp.Views.Cart;
 using XamarinShoppingApp.Views.Catalog;
 using XamarinShoppingApp.Views.Forms;
 
@@ -22,7 +21,7 @@ namespace XamarinShoppingApp
         public App()
         {
             InitializeComponent();
-            MainPage = new NavigationPage(new ProductHomePage());
+            MainPage = new NavigationPage(new SimpleLoginPage());
             CurrentCart = new List<Order_Detail>();
         }
 

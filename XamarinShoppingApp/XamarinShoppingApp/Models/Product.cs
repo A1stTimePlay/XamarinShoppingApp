@@ -1,5 +1,7 @@
-﻿using System;
+﻿using Newtonsoft.Json;
+using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Text;
 
 namespace XamarinShoppingApp.Models
@@ -38,5 +40,7 @@ namespace XamarinShoppingApp.Models
             }
 
         }
+
+        public static ObservableCollection<Product> FromJson(string json) => JsonConvert.DeserializeObject<ObservableCollection<Product>>(json, Converter.Settings);
     }
 }
