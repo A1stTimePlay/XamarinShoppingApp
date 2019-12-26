@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 using Xamarin.Forms;
 using Xamarin.Forms.Internals;
 using XamarinShoppingApp.Models;
-using xaaasadsdadasd.Services;
+using XamarinShoppingApp.Services;
 using XamarinShoppingApp.Core.Services;
 using XamarinShoppingApp.Views.Forms;
 using XamarinShoppingApp.Views.Catalog;

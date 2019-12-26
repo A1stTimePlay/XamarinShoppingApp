@@ -8,7 +8,7 @@ using XamarinShoppingApp.ViewModels.Forms;
 using XamarinShoppingApp.Views.Forms;
 using XamarinShoppingApp;
 
-namespace xaaasadsdadasd.Services
+namespace XamarinShoppingApp.Services
 {
     public class NavigationService : INavigationService
     {
