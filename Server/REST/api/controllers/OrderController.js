@@ -19,6 +19,15 @@ module.exports = {
             res.json(response)
         })
     },
+	update: (req, res) => {
+        let data = req.body;
+        let id = req.params.Id;
+        let sql = 'UPDATE orders SET ? WHERE id = ?'
+        db.query(sql, [data, id], (err, response) => {
+            if (err) throw err
+            res.json({message: 'Update success!'})
+        })
+    },
     store: (req, res) => {
         let data = req.body;
         let sql = 'INSERT INTO Orders SET ?'

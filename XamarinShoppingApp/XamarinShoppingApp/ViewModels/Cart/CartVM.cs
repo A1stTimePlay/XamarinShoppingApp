@@ -1,4 +1,5 @@
-﻿using Newtonsoft.Json;
+﻿using EssentialUIKit.Views.Transaction;
+using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -6,6 +7,7 @@ using System.Net.Http;
 using System.Text;
 using Xamarin.Forms;
 using XamarinShoppingApp.Models;
+using XamarinShoppingApp.Views.Transaction;
 
 namespace XamarinShoppingApp.ViewModels.Cart
 {
@@ -27,20 +29,15 @@ namespace XamarinShoppingApp.ViewModels.Cart
 
         private async void PlaceOrderClicked(object obj)
         {
-            bool flag = true;
+            await App.Current.MainPage.Navigation.PushAsync(new PaymentSuccessPage());
             var client = new HttpClient();
             foreach (Order_Detail read in App.CurrentCart){
                 Order_Detail_Server temp = new Order_Detail_Server(read);
                 var jsonObj = JsonConvert.SerializeObject(temp);
                 var content = new StringContent(jsonObj, Encoding.UTF8, "application/json");
                 var result = await client.PostAsync(App.BaseApiUrl + "OrderDetail", content).ConfigureAwait(false);
-                if (result.IsSuccessStatusCode) continue;
-                else
-                {
-                    flag = false;
-                    break;
-                }
             }
+
         }
 
         public CartVM()

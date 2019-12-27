@@ -29,6 +29,9 @@ module.exports = function(app) {
 	.get(orderCtrl.getOrderByIdUser)
     .post(orderCtrl.store)
 	
+  app.route('/Order/:Id')
+    .put(orderCtrl.update)
+	
   app.route('/OrderDetail')
 	.get(orderDetailCtrl.getOrderDetailByOrderId)
     .post(orderDetailCtrl.store)
